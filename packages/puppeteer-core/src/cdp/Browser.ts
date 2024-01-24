@@ -417,6 +417,13 @@ export class CdpBrowser extends BrowserBase {
   #getVersion(): Promise<Protocol.Browser.GetVersionResponse> {
     return this.#connection.send('Browser.getVersion');
   }
+
+  /**
+   * @internal
+   */
+  get _connection(): Connection {
+    return this.#connection;
+  }
 }
 
 /**
